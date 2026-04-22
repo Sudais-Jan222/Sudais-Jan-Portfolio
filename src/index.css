@@ -31,9 +31,6 @@ h5,
 h6 {
   font-family: "Geist", sans-serif;
 }
-body {
-  overflow: hidden;
-}
 a {
   color: inherit;
   text-decoration: inherit;
@@ -93,10 +90,10 @@ body {
 
 .techstack {
   width: 100%;
-  position: relative;
   height: var(--vh);
   margin: auto;
   margin-top: 50px;
+  position: relative;
   margin-bottom: -100px;
 }
 

@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import { useRef, useMemo, useState, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Environment } from "@react-three/drei";
+import { Environment, Decal } from "@react-three/drei";
 import { EffectComposer, N8AO } from "@react-three/postprocessing";
 import {
   BallCollider,
@@ -13,20 +13,27 @@ import {
 
 const textureLoader = new THREE.TextureLoader();
 const imageUrls = [
-  "/images/react2.webp",
-  "/images/next2.webp",
-  "/images/node2.webp",
-  "/images/express.webp",
-  "/images/mongo.webp",
-  "/images/mysql.webp",
-  "/images/typescript.webp",
-  "/images/javascript.webp",
+  "https://unpkg.com/@lobehub/icons-static-png@latest/light/claude-color.png",
+  "https://unpkg.com/@lobehub/icons-static-png@latest/light/n8n-color.png",
+  "https://unpkg.com/@lobehub/icons-static-png@latest/light/github.png",
+  "https://unpkg.com/@lobehub/icons-static-png@latest/light/gemini-color.png",
+  "https://unpkg.com/@lobehub/icons-static-png@latest/light/openai.png",
+  "https://unpkg.com/@lobehub/icons-static-png@latest/light/perplexity-color.png",
+  "https://cdn.simpleicons.org/airtable/18BFFF",
+  "https://unpkg.com/@lobehub/icons-static-png@latest/light/cursor.png",
+  "https://unpkg.com/@lobehub/icons-static-png@latest/light/make-color.png",
+  "https://cdn.simpleicons.org/supabase/3ECF8E",
+  "https://unpkg.com/@lobehub/icons-static-png@latest/light/lovable-color.png",
 ];
-const textures = imageUrls.map((url) => textureLoader.load(url));
+const textures = imageUrls.map((url) => {
+  const tex = textureLoader.load(url);
+  tex.colorSpace = THREE.SRGBColorSpace;
+  return tex;
+});
 
-const sphereGeometry = new THREE.SphereGeometry(1, 28, 28);
+const sphereGeometry = new THREE.SphereGeometry(1, 12, 12);
 
-const spheres = [...Array(30)].map(() => ({
+const spheres = [...Array(imageUrls.length * 2)].map(() => ({
   scale: [0.7, 1, 0.8, 1, 1][Math.floor(Math.random() * 5)],
 }));
 
@@ -34,7 +41,7 @@ type SphereProps = {
   vec?: THREE.Vector3;
   scale: number;
   r?: typeof THREE.MathUtils.randFloatSpread;
-  material: THREE.MeshPhysicalMaterial;
+  texture: THREE.Texture;
   isActive: boolean;
 };
 
@@ -42,7 +49,7 @@ function SphereGeo({
   vec = new THREE.Vector3(),
   scale,
   r = THREE.MathUtils.randFloatSpread,
-  material,
+  texture,
   isActive,
 }: SphereProps) {
   const api = useRef<RapierRigidBody | null>(null);
@@ -84,9 +91,39 @@ function SphereGeo({
         receiveShadow
         scale={scale}
         geometry={sphereGeometry}
-        material={material}
         rotation={[0.3, 1, 1]}
-      />
+      >
+        <meshPhysicalMaterial 
+           color="#ffffff" 
+           emissive="#ffffff" 
+           emissiveIntensity={0.2} 
+           metalness={0.5} 
+           roughness={1} 
+           clearcoat={0.1} 
+        />
+        <Decal position={[0, 0, 1]} rotation={[0, 0, 0]} scale={0.88}>
+          <meshPhysicalMaterial 
+            map={texture} 
+            emissiveMap={texture} 
+            emissive="#ffffff" 
+            emissiveIntensity={0.4} 
+            transparent 
+            polygonOffset 
+            polygonOffsetFactor={-1} 
+          />
+        </Decal>
+        <Decal position={[0, 0, -1]} rotation={[0, Math.PI, 0]} scale={0.88}>
+          <meshPhysicalMaterial 
+            map={texture} 
+            emissiveMap={texture} 
+            emissive="#ffffff" 
+            emissiveIntensity={0.4} 
+            transparent 
+            polygonOffset 
+            polygonOffsetFactor={-1} 
+          />
+        </Decal>
+      </mesh>
     </RigidBody>
   );
 }
@@ -151,26 +188,13 @@ const TechStack = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  const materials = useMemo(() => {
-    return textures.map(
-      (texture) =>
-        new THREE.MeshPhysicalMaterial({
-          map: texture,
-          emissive: "#ffffff",
-          emissiveMap: texture,
-          emissiveIntensity: 0.3,
-          metalness: 0.5,
-          roughness: 1,
-          clearcoat: 0.1,
-        })
-    );
-  }, []);
 
   return (
     <div className="techstack">
       <h2> My Techstack</h2>
 
       <Canvas
+        dpr={[1, 1.5]}
         shadows
         gl={{ alpha: true, stencil: false, depth: false, antialias: false }}
         camera={{ position: [0, 0, 20], fov: 32.5, near: 1, far: 100 }}
@@ -189,14 +213,17 @@ const TechStack = () => {
         <directionalLight position={[0, 5, -4]} intensity={2} />
         <Physics gravity={[0, 0, 0]}>
           <Pointer isActive={isActive} />
-          {spheres.map((props, i) => (
-            <SphereGeo
-              key={i}
-              {...props}
-              material={materials[Math.floor(Math.random() * materials.length)]}
-              isActive={isActive}
-            />
-          ))}
+          {spheres.map((props, i) => {
+            const resIdx = i % textures.length;
+            return (
+              <SphereGeo
+                key={i}
+                {...props}
+                texture={textures[resIdx]}
+                isActive={isActive}
+              />
+            );
+          })}
         </Physics>
         <Environment
           files="/models/char_enviorment.hdr"
@@ -204,7 +231,7 @@ const TechStack = () => {
           environmentRotation={[0, 4, 2]}
         />
         <EffectComposer enableNormalPass={false}>
-          <N8AO color="#0f002c" aoRadius={2} intensity={1.15} />
+          <N8AO halfRes color="#0f002c" aoRadius={2} intensity={1.15} />
         </EffectComposer>
       </Canvas>
     </div>

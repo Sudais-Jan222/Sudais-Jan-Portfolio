@@ -1,0 +1,99 @@
+[
+  {
+    "slug": "ai-voice-ops",
+    "title": "AI Voice OPS",
+    "category": "Voice Automation",
+    "techStack": "Voiceflow, Zapier, POS/Printer API",
+    "problem": "During rush hour, human receptionists answering calls, writing orders, and relaying them to the kitchen creates severe bottlenecks, dropped calls, and lost revenue.",
+    "result": "An AI agent handles multiple simultaneous calls, takes complex orders flawlessly, and automatically prints the ticket directly in the kitchen. Staff just cooks.",
+    "mediaType": "image-slider",
+    "mediaPlaceholder": [
+      "/images/Restaurant AI Agent fron end (its phone, voice etc).png",
+      "/images/Restaurant AI Agent Backend in zapier.png",
+      "/images/Restaurant AI agent Orders and reservation storing datab...png"
+    ]
+  },
+  {
+    "slug": "autonomous-outreach-engine",
+    "title": "Autonomous B2B Outreach Engine",
+    "category": "Outbound Automation",
+    "techStack": "n8n, Google Sheets, Relevance AI, Gmail API",
+    "problem": "Writing highly personalized cold emails takes hours per prospect. Scaling outbound campaigns manually while maintaining quality is nearly impossible.",
+    "result": "An autonomous pipeline that reads leads from a database, scrapes their LinkedIn profiles, analyzes company data using Relevance AI, and fires off highly personalized emails to 50+ ICPs entirely in the background.",
+    "mediaType": "image",
+    "mediaPlaceholder": "/images/Email Outreach Personalized Agent.png"
+  },
+  {
+    "slug": "ai-detailer-platform",
+    "title": "AI Detailer Web Platform",
+    "category": "Full-Stack Web App",
+    "techStack": "Anti-gravity, React, Gemini Vision",
+    "problem": "Detailers miss 3-4 calls a day while working on cars, and customers struggle to figure out which detailing package they actually need based on their car's condition.",
+    "result": "A fully functional React web app featuring a 24/7 AI chat assistant and an intelligent visual estimator that analyzes car photos to honestly recommend the right package.",
+    "mediaType": "image-slider",
+    "mediaPlaceholder": [
+      "/images/Website Show.png",
+      "/images/Website Code in anti Gravity.png"
+    ]
+  },
+  {
+    "slug": "ecom-shopping-assistant",
+    "title": "Ecom AI Shopping Assistant",
+    "category": "Conversational Commerce",
+    "techStack": "LLM Agents, Shopify API, CRM Integration",
+    "problem": "Ecom websites suffer from high bounce rates because customers cannot easily find the right products or get instant answers to shipping/product questions.",
+    "result": "A 24/7 intelligent on-site chatbot that guides users to the right products based on their intent, handles support FAQs, and seamlessly captures user emails directly into the store's CRM database.",
+    "mediaType": "image",
+    "mediaPlaceholder": "/images/Ecommerce AI chatbot.png"
+  },
+  {
+    "slug": "abandoned-cart-closer",
+    "title": "Ecom Abandoned Cart Closer",
+    "category": "Outbound AI Sales",
+    "techStack": "Voiceflow, Twilio API, Shopify API",
+    "problem": "Ecom brands bleed revenue when customers add items to their cart but bounce due to price hesitation.",
+    "result": "An outbound AI agent calls the customer, negotiates the price objection, dynamically generates a valid discount code, and texts them a direct checkout link.",
+    "mediaType": "video-placeholder",
+    "mediaPlaceholder": "/images/Ecommerce AI chatbot.png"
+  },
+  {
+    "slug": "home-service-booker",
+    "title": "High-Ticket Home Service Booker",
+    "category": "Intelligent Dispatch",
+    "techStack": "Voiceflow, CRM API, Gemini",
+    "problem": "Missing a single call from a homeowner with a plumbing or HVAC emergency means losing a $10,000+ job to a competitor.",
+    "result": "A 24/7 intelligent dispatcher captures exact addresses, understands complex mechanical problems, and locks in the appointment instantly.",
+    "mediaType": "video-placeholder",
+    "mediaPlaceholder": "/images/Restaurant AI Agent fron end (its phone, voice etc).png"
+  },
+  {
+    "slug": "ecom-creative-agent",
+    "title": "Ecom Creative Agent",
+    "category": "Generative AI",
+    "techStack": "Make.com, Stable Diffusion, Gemini Vision",
+    "problem": "Human designers max out at a few creatives a day. Traditional ad agencies are slow and highly expensive.",
+    "result": "The agent analyzes competitors and generates 3 to 5 studio-quality ad variants in under a minute directly from a single raw product photo.",
+    "mediaType": "video-placeholder",
+    "mediaPlaceholder": "/images/Website Code in anti Gravity.png"
+  },
+  {
+    "slug": "airtable-ad-suite",
+    "title": "Airtable Ad Agency Suite",
+    "category": "Content Engine",
+    "techStack": "n8n, Airtable, Gemini API, Web Scraping",
+    "problem": "Ad agencies waste hours researching products, writing hooks, and manually switching between 10 different tabs and tracking sheets.",
+    "result": "A single-dashboard Airtable environment. Click one button and it scrapes the FB Ad Library, researches the product, and writes highly converting VSL scripts.",
+    "mediaType": "video-placeholder",
+    "mediaPlaceholder": "/images/Email Outreach Personalized Agent.png"
+  },
+  {
+    "slug": "enterprise-content-engine",
+    "title": "Autonomous Content Marketing Engine",
+    "category": "Enterprise Architecture",
+    "techStack": "n8n, Multi-Agent LLMs, HubSpot, Airtable",
+    "problem": "Running a multi-channel content strategy requires a massive team of researchers, writers, and social managers. It is expensive, slow, and prone to human error and missed posting schedules.",
+    "result": "A massive 39-node enterprise architecture that orchestrates multiple AI agents to research trends, write optimized content, distribute it across 6 platforms simultaneously, and track analytics in the HubSpot CRM with built-in error handling.",
+    "mediaType": "image",
+    "mediaPlaceholder": "/images/Enterprise Content Engine.png"
+  }
+]

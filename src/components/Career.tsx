@@ -5,8 +5,8 @@ const Career = () => {
     <div className="career-section section-container">
       <div className="career-container">
         <h2>
-          My career <span>&</span>
-          <br /> experience
+          BUILD TIMELINE: <span>FROM</span>
+          <br /> CONCEPT TO EXECUTION
         </h2>
         <div className="career-info">
           <div className="career-timeline">
@@ -15,43 +15,37 @@ const Career = () => {
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Position In Company</h4>
-                <h5>Company Name</h5>
+                <h4>Ecom Creative Agent</h4>
+                <h5>Independent Project Build</h5>
               </div>
-              <h3>20XX</h3>
+              <h3>2023</h3>
             </div>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
-              labore sit non ipsum temporibus quidem, deserunt eaque officiis
-              mollitia ratione suscipit repellat.
+              Built an AI pipeline that turns raw product images into high-performing, studio-quality ad creatives in seconds.
             </p>
           </div>
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Position In Company</h4>
-                <h5>Company Name</h5>
+                <h4>Airtable Ad Agency Suite</h4>
+                <h5>Independent Workflow Build</h5>
               </div>
-              <h3>20XX</h3>
+              <h3>2024</h3>
             </div>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
-              labore sit non ipsum temporibus quidem, deserunt eaque officiis
-              mollitia ratione suscipit repellat.
+              Eliminated manual creative research. Built an n8n pipeline that researches products, writes VSL scripts, and tracks FB library trends automatically.
             </p>
           </div>
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Position In Company</h4>
-                <h5>Company Name</h5>
+                <h4>AI Voice OPS (EU Restaurant)</h4>
+                <h5>Advanced Proof of Concept</h5>
               </div>
               <h3>NOW</h3>
             </div>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
-              labore sit non ipsum temporibus quidem, deserunt eaque officiis
-              mollitia ratione suscipit repellat.
+              Resolved 24/7 order intake by building a Voiceflow-Make-Printer integration. Automatically takes orders and prints them for the staff.
             </p>
           </div>
         </div>

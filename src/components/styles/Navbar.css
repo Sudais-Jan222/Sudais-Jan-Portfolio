@@ -40,10 +40,51 @@
   letter-spacing: 1px;
   font-weight: 500;
 }
-.navbar-title {
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 0.2px;
+/* Logo Typography */
+.navbar-logo-container {
+  display: flex;
+  align-items: center;
+  font-family: 'Space Grotesk', 'JetBrains Mono', 'Fira Code', monospace;
+  font-weight: 800;
+  font-size: 1.5rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.logo-bracket {
+  color: #666666;
+  transition: transform 0.3s ease, margin 0.3s ease;
+}
+
+.logo-initials {
+  color: #FF6B35;
+  text-shadow: 0 0 10px rgba(255, 107, 53, 0.4);
+  position: relative;
+  transition: text-shadow 0.3s ease, padding 0.3s ease;
+  margin: 0 2px;
+}
+
+.logo-initials::after {
+  content: '|';
+  position: absolute;
+  color: #FF6B35;
+  right: -10px;
+  animation: blinkCursor 1s infinite;
+}
+
+@keyframes blinkCursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.navbar-logo-container:hover .logo-bracket:first-child {
+  transform: translateX(-4px);
+}
+.navbar-logo-container:hover .logo-bracket:last-child {
+  transform: translateX(4px);
+}
+.navbar-logo-container:hover .logo-initials {
+  text-shadow: 0 0 20px rgba(255, 107, 53, 0.8), 0 0 30px rgba(255, 107, 53, 0.6);
 }
 @media only screen and (min-width: 500px) {
   .header {
@@ -56,9 +97,6 @@
   }
   .header ul li {
     color: #eae5ec;
-  }
-  .navbar-title {
-    font-size: 16px;
   }
 }
 @media only screen and (min-width: 900px) {
@@ -76,8 +114,5 @@
   }
   .navbar-connect {
     font-size: 16px;
-  }
-  .navbar-title {
-    font-size: 18px;
   }
 }

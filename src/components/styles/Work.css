@@ -10,7 +10,6 @@
   transition: 0s;
   height: 100vh;
   box-sizing: border-box;
-  will-change: transform;
 }
 .work-container {
   margin: auto;

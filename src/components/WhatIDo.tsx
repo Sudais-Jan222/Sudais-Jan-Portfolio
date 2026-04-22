@@ -1,29 +1,13 @@
-import { useEffect, useRef } from "react";
+import { useState } from "react";
 import "./styles/WhatIDo.css";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const WhatIDo = () => {
-  const containerRef = useRef<(HTMLDivElement | null)[]>([]);
-  const setRef = (el: HTMLDivElement | null, index: number) => {
-    containerRef.current[index] = el;
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  const handleClick = (index: number) => {
+    setActiveIndex(activeIndex === index ? null : index);
   };
-  useEffect(() => {
-    if (ScrollTrigger.isTouch) {
-      containerRef.current.forEach((container) => {
-        if (container) {
-          container.classList.remove("what-noTouch");
-          container.addEventListener("click", () => handleClick(container));
-        }
-      });
-    }
-    return () => {
-      containerRef.current.forEach((container) => {
-        if (container) {
-          container.removeEventListener("click", () => handleClick(container));
-        }
-      });
-    };
-  }, []);
+
   return (
     <div className="whatIDO">
       <div className="what-box">
@@ -59,8 +43,8 @@ const WhatIDo = () => {
             </svg>
           </div>
           <div
-            className="what-content what-noTouch"
-            ref={(el) => setRef(el, 0)}
+            className={`what-content ${activeIndex === 0 ? "what-content-active" : activeIndex === 1 ? "what-sibling" : ""}`}
+            onClick={() => handleClick(0)}
           >
             <div className="what-border1">
               <svg height="100%">
@@ -87,31 +71,26 @@ const WhatIDo = () => {
             <div className="what-corner"></div>
 
             <div className="what-content-in">
-              <h3>DEVELOP</h3>
+              <h3>Custom AI Systems</h3>
               <h4>Description</h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-                quia aliquid laboriosam ducimus sit molestiae.
+                I build AI that handles your boring, repetitive tasks so you don't have to.
+                The goal is simple: save your team hundreds of hours of manual work and cut
+                down your operating costs.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
-                <div className="what-tags">JavaScript</div>
-                <div className="what-tags">TypeScript</div>
-                <div className="what-tags">Three.js</div>
-                <div className="what-tags">React</div>
-                <div className="what-tags">Css</div>
-                <div className="what-tags">Node.js</div>
-                <div className="what-tags">Next.js</div>
-                <div className="what-tags">Express.js</div>
-                <div className="what-tags">PHP</div>
-                <div className="what-tags">MySql</div>
+                <div className="what-tags">n8n</div>
+                <div className="what-tags">make.com</div>
+                <div className="what-tags">airtable</div>
+                <div className="what-tags">zapier</div>
               </div>
               <div className="what-arrow"></div>
             </div>
           </div>
           <div
-            className="what-content what-noTouch"
-            ref={(el) => setRef(el, 1)}
+            className={`what-content ${activeIndex === 1 ? "what-content-active" : activeIndex === 0 ? "what-sibling" : ""}`}
+            onClick={() => handleClick(1)}
           >
             <div className="what-border1">
               <svg height="100%">
@@ -128,22 +107,21 @@ const WhatIDo = () => {
             </div>
             <div className="what-corner"></div>
             <div className="what-content-in">
-              <h3>DESIGN</h3>
+              <h3>Vibe-Coded Apps</h3>
               <h4>Description</h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-                quia aliquid laboriosam ducimus sit molestiae
+                I build custom web apps, clean interfaces, and automated workflows at lightning
+                speed. You get premium, fully functional software without the traditional
+                months-long wait times.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
-                <div className="what-tags">Blender</div>
-                <div className="what-tags">Zbrush</div>
-                <div className="what-tags">UI Design</div>
-                <div className="what-tags">Motion</div>
-                <div className="what-tags">Rigging</div>
-                <div className="what-tags">3D Animation</div>
-                <div className="what-tags">Character Design</div>
-                <div className="what-tags">Modelling</div>
+                <div className="what-tags">antigravity</div>
+                <div className="what-tags">lovable</div>
+                <div className="what-tags">github</div>
+                <div className="what-tags">netlify</div>
+                <div className="what-tags">supabase</div>
+                <div className="what-tags">firebase</div>
               </div>
               <div className="what-arrow"></div>
             </div>
@@ -155,18 +133,3 @@ const WhatIDo = () => {
 };
 
 export default WhatIDo;
-
-function handleClick(container: HTMLDivElement) {
-  container.classList.toggle("what-content-active");
-  container.classList.remove("what-sibling");
-  if (container.parentElement) {
-    const siblings = Array.from(container.parentElement.children);
-
-    siblings.forEach((sibling) => {
-      if (sibling !== container) {
-        sibling.classList.remove("what-content-active");
-        sibling.classList.toggle("what-sibling");
-      }
-    });
-  }
-}
