@@ -26,3 +26,6 @@ dist-ssr
 
 backup/
 .env
+
+# LFS model file (project uses .enc instead)
+public/models/character.glb
