@@ -58,11 +58,18 @@ const AIChatbot = ({ projectTitle, techStack, problem, result }: AIChatbotProps)
         }),
       });
 
-      const data = await response.json();
+      const responseText = await response.text();
+      let data;
+      try {
+        data = JSON.parse(responseText);
+      } catch {
+        console.error("Non-JSON response:", responseText.substring(0, 500));
+        throw new Error(`Server returned non-JSON (status ${response.status}): ${responseText.substring(0, 100)}`);
+      }
 
       if (!response.ok) {
         console.error("Chat API error:", data);
-        throw new Error(data.error || "Request failed");
+        throw new Error(data.error || `Request failed with status ${response.status}`);
       }
 
       setMessages((prev) => [
@@ -75,7 +82,7 @@ const AIChatbot = ({ projectTitle, techStack, problem, result }: AIChatbotProps)
         ...prev,
         {
           role: "bot",
-          text: "Sorry, I couldn't connect right now. Please try again in a moment.",
+          text: `Debug: ${error.message}`,
         },
       ]);
     } finally {
