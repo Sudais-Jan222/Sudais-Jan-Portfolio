@@ -13,7 +13,7 @@ interface AIChatbotProps {
 }
 
 const GEMINI_API_KEY = "AIzaSyA80HWt0VWOwJsyh5gpJnJuj-sOSX0Pod4";
-const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`;
+const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`;
 
 const AIChatbot = ({ projectTitle, techStack, problem, result }: AIChatbotProps) => {
   const [isOpen, setIsOpen] = useState(false);
