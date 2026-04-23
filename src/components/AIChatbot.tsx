@@ -12,22 +12,19 @@ interface AIChatbotProps {
   result: string;
 }
 
-const GEMINI_API_KEY = "AIzaSyA80HWt0VWOwJsyh5gpJnJuj-sOSX0Pod4";
-const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`;
-
 const AIChatbot = ({ projectTitle, techStack, problem, result }: AIChatbotProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       role: "bot",
-      text: `Hey! I'm Sudais' technical assistant. Ask me anything about how the "${projectTitle}" was built.`,
+      text: `Hey! I'm Sudais' technical assistant. Ask me anything about how "${projectTitle}" was built.`,
     },
   ]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  const systemPrompt = `You are Sudais' digital technical assistant. The user is currently viewing the case study for the "${projectTitle}" built using ${techStack}. Your job is to answer their technical questions about how Sudais built this solution to solve the following problem: ${problem}. The result of this build was: ${result}. Keep your answers highly technical, confident, and concise. Answer in 2-3 sentences max unless asked for detail. Always maintain a professional yet helpful tone.`;
+  const systemPrompt = `You are Sudais' digital technical assistant on his portfolio website. The user is viewing the case study for "${projectTitle}" built using ${techStack}. Answer questions about how Sudais built this solution. Problem solved: ${problem}. Result achieved: ${result}. Keep answers technical, confident, and concise (2-3 sentences max unless asked for detail). Be professional yet helpful.`;
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -41,50 +38,45 @@ const AIChatbot = ({ projectTitle, techStack, problem, result }: AIChatbotProps)
     setLoading(true);
 
     try {
-      // Filter out only user and model messages, ensuring they alternate correctly
-      // Gemini expects: User, Model, User, Model...
-      const conversationHistory = messages
-        .filter(msg => (msg.role === "user" || (msg.role === "bot" && msg.text !== messages[0].text))) // Skip the initial intro message
+      // Build conversation history for the API (skip the initial greeting)
+      const history = messages
+        .filter((_, i) => i > 0) // skip intro message
         .map((msg) => ({
           role: msg.role === "user" ? "user" : "model",
-          parts: [{ text: msg.text }],
+          text: msg.text,
         }));
 
-      const response = await fetch(GEMINI_API_URL, {
+      // Add current user message
+      history.push({ role: "user", text: userMsg });
+
+      const response = await fetch("/.netlify/functions/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          contents: [
-            ...conversationHistory,
-            { role: "user", parts: [{ text: userMsg }] },
-          ],
-          system_instruction: {
-            parts: [{ text: systemPrompt }],
-          },
-          generationConfig: {
-            temperature: 0.7,
-            maxOutputTokens: 250,
-          }
+          messages: history,
+          systemPrompt,
         }),
       });
 
+      const data = await response.json();
+
       if (!response.ok) {
-        const errorData = await response.json();
-        console.error("Gemini API Error:", errorData);
-        throw new Error(errorData.error?.message || "Failed to get response");
+        console.error("Chat API error:", data);
+        throw new Error(data.error || "Request failed");
       }
 
-      const data = await response.json();
-      const botText =
-        data?.candidates?.[0]?.content?.parts?.[0]?.text ||
-        "I'm sorry, I couldn't process that. Could you try rephrasing?";
-
-      setMessages((prev) => [...prev, { role: "bot", text: botText }]);
-    } catch (error: any) {
-      console.error("Chatbot sendMessage error:", error);
       setMessages((prev) => [
         ...prev,
-        { role: "bot", text: "Something went wrong on my end. Please try again in a moment." },
+        { role: "bot", text: data.reply },
+      ]);
+    } catch (error: any) {
+      console.error("Chatbot error:", error);
+      setMessages((prev) => [
+        ...prev,
+        {
+          role: "bot",
+          text: "Sorry, I couldn't connect right now. Please try again in a moment.",
+        },
       ]);
     } finally {
       setLoading(false);
