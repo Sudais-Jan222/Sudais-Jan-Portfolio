@@ -13,6 +13,7 @@ interface Project {
   result: string;
   mediaType: string;
   mediaPlaceholder: string | string[];
+  video?: string;
 }
 
 const ProjectPage = () => {
@@ -52,7 +53,18 @@ const ProjectPage = () => {
 
       {/* Media Hero */}
       <div className="project-media-hero" style={{ width: "90%", margin: "0 auto 80px auto", height: "auto", position: "relative", overflow: "hidden", borderRadius: "40px", backgroundColor: "#0b080c", border: "1px solid #222" }}>
-        {Array.isArray(project.mediaPlaceholder) ? (
+        {project.mediaType === "video" && project.video ? (
+          <div style={{ width: "100%", display: "flex", justifyContent: "center", padding: "20px", boxSizing: "border-box" }}>
+            <video 
+              src={project.video} 
+              controls 
+              autoPlay 
+              muted 
+              loop 
+              style={{ maxWidth: "100%", height: "auto", maxHeight: "85vh", borderRadius: "20px", boxShadow: "0 20px 40px rgba(0,0,0,0.5)" }}
+            />
+          </div>
+        ) : Array.isArray(project.mediaPlaceholder) ? (
           <div style={{ display: "flex", overflowX: "auto", scrollSnapType: "x mandatory", width: "100%", height: "auto", scrollBehavior: "smooth", WebkitOverflowScrolling: "touch" }}>
             {project.mediaPlaceholder.map((img, i) => (
               <img key={i} src={img} alt={`${project.title} - ${i + 1}`} style={{ flex: "0 0 100%", width: "100%", height: "auto", maxHeight: "80vh", objectFit: "contain", scrollSnapAlign: "start", padding: "40px", boxSizing: "border-box" }} />

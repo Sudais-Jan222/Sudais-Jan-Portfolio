@@ -73,7 +73,8 @@
     "techStack": "Make.com, Stable Diffusion, Gemini Vision",
     "problem": "Human designers max out at a few creatives a day. Traditional ad agencies are slow and highly expensive.",
     "result": "The agent analyzes competitors and generates 3 to 5 studio-quality ad variants in under a minute directly from a single raw product photo.",
-    "mediaType": "video-placeholder",
+    "mediaType": "video",
+    "video": "/Videos/AD Genius Demo.mp4",
     "mediaPlaceholder": "/images/Website Code in anti Gravity.png"
   },
   {
@@ -83,7 +84,8 @@
     "techStack": "n8n, Airtable, Gemini API, Web Scraping",
     "problem": "Ad agencies waste hours researching products, writing hooks, and manually switching between 10 different tabs and tracking sheets.",
     "result": "A single-dashboard Airtable environment. Click one button and it scrapes the FB Ad Library, researches the product, and writes highly converting VSL scripts.",
-    "mediaType": "video-placeholder",
+    "mediaType": "video",
+    "video": "/Videos/AD Agency Automated System by Sudais Jan.mp4",
     "mediaPlaceholder": "/images/Email Outreach Personalized Agent.png"
   },
   {

@@ -83,7 +83,7 @@ const Work = () => {
                     <h4>Tools and features</h4>
                     <p>{project.techStack}</p>
                   </div>
-                  <WorkImage image={imageSrc || "/images/placeholder.webp"} alt={project.title} />
+                  <WorkImage image={imageSrc || "/images/placeholder.webp"} alt={project.title} video={(project as any).video} />
                 </div>
               </Link>
             )})}
