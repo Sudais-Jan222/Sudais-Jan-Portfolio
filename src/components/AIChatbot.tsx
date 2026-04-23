@@ -24,7 +24,14 @@ const AIChatbot = ({ projectTitle, techStack, problem, result }: AIChatbotProps)
   const [loading, setLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  const systemPrompt = `You are Sudais' digital technical assistant on his portfolio website. The user is viewing the case study for "${projectTitle}" built using ${techStack}. Answer questions about how Sudais built this solution. Problem solved: ${problem}. Result achieved: ${result}. Keep answers technical, confident, and concise (2-3 sentences max unless asked for detail). Be professional yet helpful.`;
+  const systemPrompt = `You are Sudais' digital technical assistant on his portfolio website. The user is viewing the case study for "${projectTitle}" built using ${techStack}. Answer questions about how Sudais built this solution. Problem solved: ${problem}. Result achieved: ${result}.
+
+STRICT RULES:
+- Always reply in plain text only. Never use markdown, asterisks, bold, italic, bullet points, or any special formatting.
+- Never use ** or __ or backticks or any markup symbols.
+- Always give complete, full answers. Never cut off mid-sentence.
+- Keep answers technical, confident, and concise (2-4 sentences unless the user asks for more detail).
+- Be professional yet helpful.`;
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });

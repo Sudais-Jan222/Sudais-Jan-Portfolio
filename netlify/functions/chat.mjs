@@ -34,7 +34,7 @@ export default async (request) => {
       parts: [{ text: msg.text }],
     }));
 
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key=${apiKey}`;
 
     const geminiRes = await fetch(url, {
       method: "POST",
@@ -46,7 +46,7 @@ export default async (request) => {
         },
         generationConfig: {
           temperature: 0.7,
-          maxOutputTokens: 300,
+          maxOutputTokens: 800,
         },
       }),
     });
