@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import projectsData from "../data/projects.json";
 import Navbar from "./Navbar";
 
+const ProjectsList = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
