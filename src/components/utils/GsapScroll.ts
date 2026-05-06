@@ -63,6 +63,9 @@ export function setCharTimeline(
   let neckBone = character?.getObjectByName("spine005");
   if (window.innerWidth > 1024) {
     if (character) {
+      // Ensure character starts perfectly centered before scroll animations
+      gsap.set(".character-model", { x: "-50%", y: "0%" });
+
       tl1
         .fromTo(character.rotation, { y: 0 }, { y: 0.7, duration: 1 }, 0)
         .to(camera.position, { z: 22 }, 0)

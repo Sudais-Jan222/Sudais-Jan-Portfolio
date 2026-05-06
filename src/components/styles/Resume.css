@@ -1,0 +1,356 @@
+/* ======================================================
+   Resume Page — Premium Dark Mode
+   ====================================================== */
+
+.resume-page {
+  min-height: 100vh;
+  background-color: #000000;
+  color: #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px 100px;
+  position: relative;
+  font-family: "Geist", "Inter", sans-serif;
+}
+
+/* — Back to Portfolio Link — */
+.resume-back-link {
+  position: fixed;
+  top: 28px;
+  left: 32px;
+  z-index: 100;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #888;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.resume-back-link:hover {
+  color: #FF6B35;
+}
+.resume-back-link svg {
+  font-size: 16px;
+}
+
+/* — Download FAB — */
+.resume-download-fab {
+  position: fixed;
+  top: 24px;
+  right: 32px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #FF6B35 0%, #e0521a 100%);
+  color: #fff;
+  font-family: "Geist", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(255, 107, 53, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.3s ease;
+}
+.resume-download-fab:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 30px rgba(255, 107, 53, 0.5);
+}
+.resume-download-fab:active {
+  transform: scale(0.97);
+}
+.resume-download-fab svg {
+  font-size: 16px;
+}
+.resume-download-fab.generating {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+/* — Printable Container — */
+.resume-container {
+  width: 100%;
+  max-width: 800px;
+  background: #0a0a0a;
+  border: 1px solid #1a1a1a;
+  border-radius: 12px;
+  padding: 56px 52px;
+  box-shadow: 0 0 80px rgba(255, 107, 53, 0.04), 0 2px 40px rgba(0,0,0,0.5);
+}
+
+/* — Header — */
+.resume-header {
+  text-align: center;
+  padding-bottom: 32px;
+  border-bottom: 1px solid #222;
+  margin-bottom: 36px;
+}
+.resume-name {
+  font-size: 38px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+  margin: 0 0 6px;
+  line-height: 1.15;
+}
+.resume-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #FF6B35;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin: 0 0 18px;
+}
+.resume-contact-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  font-size: 13px;
+  color: #999;
+}
+.resume-contact-row span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.resume-contact-row a {
+  color: #bbb;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.resume-contact-row a:hover {
+  color: #FF6B35;
+}
+.resume-contact-divider {
+  color: #333;
+  user-select: none;
+}
+
+/* — Section Generics — */
+.resume-section {
+  margin-bottom: 36px;
+}
+.resume-section:last-child {
+  margin-bottom: 0;
+}
+.resume-section-heading {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #FF6B35;
+  margin: 0 0 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #1e1e1e;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.resume-section-heading::before {
+  content: "";
+  width: 4px;
+  height: 14px;
+  border-radius: 2px;
+  background: #FF6B35;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* — Profile / Summary — */
+.resume-profile-text {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #c0c0c0;
+  margin: 0;
+}
+
+/* — Tech Pills — */
+.resume-tech-group {
+  margin-bottom: 16px;
+}
+.resume-tech-group:last-child {
+  margin-bottom: 0;
+}
+.resume-tech-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #777;
+  margin-bottom: 8px;
+}
+.resume-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.resume-pill {
+  padding: 5px 14px;
+  border-radius: 50px;
+  background: #161616;
+  border: 1px solid #282828;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #ccc;
+  letter-spacing: 0.3px;
+  transition: border-color 0.3s ease, background 0.3s ease;
+  white-space: nowrap;
+}
+.resume-pill:hover {
+  border-color: #FF6B35;
+  background: rgba(255, 107, 53, 0.08);
+  color: #FF6B35;
+}
+
+/* — Project Items — */
+.resume-project {
+  padding: 20px 0;
+  border-bottom: 1px solid #1a1a1a;
+}
+.resume-project:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.resume-project:first-child {
+  padding-top: 0;
+}
+.resume-project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.resume-project-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #f0f0f0;
+  margin: 0;
+}
+.resume-project-tech {
+  font-size: 11px;
+  font-weight: 500;
+  color: #FF6B35;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  background: rgba(255, 107, 53, 0.08);
+  padding: 4px 12px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 107, 53, 0.15);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.resume-project-details {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #aaa;
+  margin: 0;
+}
+
+/* — Education — */
+.resume-education-text {
+  font-size: 14.5px;
+  line-height: 1.75;
+  color: #b5b5b5;
+  margin: 0;
+}
+
+/* ======================================================
+   Responsive
+   ====================================================== */
+@media screen and (max-width: 860px) {
+  .resume-container {
+    padding: 40px 28px;
+    border-radius: 8px;
+  }
+  .resume-name {
+    font-size: 30px;
+  }
+  .resume-title {
+    font-size: 13px;
+  }
+  .resume-project-header {
+    flex-direction: column;
+    gap: 6px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .resume-page {
+    padding: 80px 12px 80px;
+  }
+  .resume-container {
+    padding: 28px 18px;
+  }
+  .resume-name {
+    font-size: 26px;
+  }
+  .resume-download-fab {
+    top: auto;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 18px;
+    font-size: 12px;
+  }
+  .resume-back-link {
+    top: 20px;
+    left: 16px;
+    font-size: 11px;
+  }
+}
+
+/* ======================================================
+   Print / PDF Export — Hide UI chrome, force dark bg
+   ====================================================== */
+@media print {
+  /* Hide non-document elements */
+  .resume-download-fab,
+  .resume-back-link,
+  .header,
+  .nav-fade,
+  .landing-circle1,
+  .landing-circle2,
+  .icons-section {
+    display: none !important;
+  }
+
+  /* Force background to print */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  body {
+    background: #000000 !important;
+  }
+  .resume-page {
+    background: #000000 !important;
+    padding: 0 !important;
+    min-height: auto !important;
+  }
+  .resume-container {
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    max-width: 100% !important;
+    padding: 32px 40px !important;
+  }
+
+  .resume-pill:hover {
+    border-color: #282828;
+    background: #161616;
+    color: #ccc;
+  }
+}

@@ -208,15 +208,6 @@ const Contact = () => {
           © 2026 Sudais Jan. Built with AI.
         </div>
         <div className="bottom-right">
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-icon">
-            <FaLinkedinIn />
-          </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-icon">
-            <FaXTwitter />
-          </a>
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="social-icon">
-            <FaGithub />
-          </a>
         </div>
       </div>
     </div>

@@ -193,10 +193,40 @@
   top: 0;
   color: var(--backgroundColor);
 }
-.loader-title {
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 0.2px;
+.navbar-logo-container.loader-title-sj {
+  display: flex;
+  align-items: center;
+  font-family: 'Space Grotesk', 'JetBrains Mono', 'Fira Code', monospace;
+  font-weight: 800;
+  font-size: 1.2rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.logo-bracket {
+  color: #666666;
+  transition: transform 0.3s ease, margin 0.3s ease;
+}
+
+.logo-initials {
+  color: #FF6B35;
+  text-shadow: 0 0 10px rgba(255, 107, 53, 0.4);
+  position: relative;
+  transition: text-shadow 0.3s ease, padding 0.3s ease;
+  margin: 0 2px;
+}
+
+.logo-initials::after {
+  content: '|';
+  position: absolute;
+  color: #FF6B35;
+  right: -10px;
+  animation: blinkCursor 1s infinite;
+}
+
+@keyframes blinkCursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 @keyframes blink {
   0% {
@@ -349,15 +379,15 @@
   .loading-header {
     padding: 20px 0px;
   }
-  .loader-title {
-    font-size: 16px;
+  .navbar-logo-container.loader-title-sj {
+    font-size: 1.4rem;
   }
 }
 @media only screen and (min-width: 1200px) {
   .loading-header {
     padding: 35px 0px;
   }
-  .loader-title {
-    font-size: 18px;
+  .navbar-logo-container.loader-title-sj {
+    font-size: 1.5rem;
   }
 }
