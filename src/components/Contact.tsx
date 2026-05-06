@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./styles/Contact.css";
-import { FaLinkedinIn, FaXTwitter, FaGithub } from "react-icons/fa6";
+
 
 const services = [
   "AI Automation & Workflows",
