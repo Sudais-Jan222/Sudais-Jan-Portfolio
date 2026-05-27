@@ -18,6 +18,7 @@ const Contact = () => {
   const [preferredContact, setPreferredContact] = useState<string>("Email");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
@@ -39,12 +40,13 @@ const Contact = () => {
       service: selectedService,
       budget: formatBudget(budget),
       preferredContact,
+      message: message || "No message provided",
       submittedAt: new Date().toISOString(),
       source: "Portfolio Website Contact Form"
     };
 
     try {
-      const response = await fetch("https://hook.eu2.make.com/1b4jtb7pgmavouu8vga9j1k45muxvu0r", {
+      const response = await fetch("https://hook.us2.make.com/9siju7iq52d2d6gqbg2t7pyky1zifzo9", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -57,6 +59,7 @@ const Contact = () => {
         // Reset form after success
         setName("");
         setEmail("");
+        setMessage("");
         setSelectedService(null);
         setBudget(5000);
       } else {
@@ -148,6 +151,17 @@ const Contact = () => {
                 </button>
               ))}
             </div>
+          </div>
+
+          <div className="form-group">
+            <label className="section-label">Additional Details</label>
+            <textarea 
+              placeholder="Tell me more about your project goals..." 
+              value={message} 
+              onChange={(e) => setMessage(e.target.value)} 
+              className="std-input std-textarea"
+              rows={4}
+            />
           </div>
         </div>
 
