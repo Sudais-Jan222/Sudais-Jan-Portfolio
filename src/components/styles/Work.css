@@ -1,9 +1,9 @@
-.work-section h2 {
+.work-section-title {
   margin-top: 100px;
   font-size: 70px;
   font-weight: 500;
 }
-.work-section h2 > span {
+.work-section-title > span {
   color: var(--accentColor);
 }
 .work-section {
@@ -70,6 +70,7 @@
   font-weight: 600;
 }
 
+.work-info h2,
 .work-info h4 {
   font-size: 18px;
   font-weight: 400;
@@ -136,7 +137,7 @@
     padding-top: 40px;
     padding-bottom: 40px;
   }
-  .work-section h2 {
+  .work-section-title {
     font-size: 60px;
     margin-bottom: 30px;
     margin-top: 70px;
@@ -149,6 +150,7 @@
   .work-info p {
     font-size: 13px;
   }
+  .work-info h2,
   .work-info h4 {
     font-size: 15px;
   }
@@ -160,7 +162,7 @@
     margin-left: -50px;
     padding-right: 75px;
   }
-  .work-section h2 {
+  .work-section-title {
     font-size: 50px;
   }
 }
@@ -179,7 +181,7 @@
   .work-image img {
     max-height: 200px;
   }
-  .work-section h2 {
+  .work-section-title {
     font-size: 40px;
     margin-bottom: 20px;
   }

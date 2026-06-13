@@ -74,7 +74,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="contact-main" id="contact">
+    <section className="contact-main" id="contact" aria-label="Contact and Strategy Session Quick Start">
       <div className="contact-header">
         <h2 className="contact-heading">Ready for your next build?</h2>
         <p className="contact-subheading">Let's connect. Select your project details below.</p>
@@ -224,7 +224,7 @@ const Contact = () => {
         <div className="bottom-right">
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

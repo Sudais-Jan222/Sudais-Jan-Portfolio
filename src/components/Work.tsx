@@ -60,9 +60,9 @@ const Work = () => {
 
   return (
     <div ref={spacerRef} className="work-manual-spacer" style={{ position: "relative" }}>
-      <div className="work-section" id="work" ref={containerRef}>
+      <section className="work-section" id="work" ref={containerRef} aria-label="My Projects Portfolio">
         <div className="work-container section-container">
-          <h2>
+          <h2 className="work-section-title">
             MY <span>WORK</span>
           </h2>
           <div className="work-flex" ref={flexRef}>
@@ -70,13 +70,13 @@ const Work = () => {
               const imageSrc = Array.isArray(project.mediaPlaceholder) ? project.mediaPlaceholder[0] : project.mediaPlaceholder;
               return (
               <Link to={`/projects/${project.slug}`} key={index} style={{ textDecoration: 'none', color: 'inherit' }}>
-                <div className="work-box">
+                <article className="work-box">
                   <div className="work-info">
                     <div className="work-title">
                       <h3>0{index + 1}</h3>
 
                       <div>
-                        <h4>{project.title}</h4>
+                        <h2>{project.title}</h2>
                         <p>{project.category}</p>
                       </div>
                     </div>
@@ -84,7 +84,7 @@ const Work = () => {
                     <p>{project.techStack}</p>
                   </div>
                   <WorkImage image={imageSrc || "/images/placeholder.webp"} alt={project.title} video={(project as any).video} />
-                </div>
+                </article>
               </Link>
             )})}
           </div>
@@ -109,7 +109,7 @@ const Work = () => {
              </Link>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };

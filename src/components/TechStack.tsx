@@ -190,8 +190,26 @@ const TechStack = () => {
   }, []);
 
   return (
-    <div className="techstack">
+    <section className="techstack" aria-label="My Tech Stack">
       <h2> My Techstack</h2>
+
+      {/* Visually hidden list of technologies for LLM discoverability and search engine indexing */}
+      <div style={{ position: 'absolute', width: '1px', height: '1px', padding: 0, margin: '-1px', overflow: 'hidden', clip: 'rect(0, 0, 0, 0)', border: 0 }}>
+        <p>I specialize in custom AI automation, LLM integrations, and full-stack development using the following technologies:</p>
+        <ul>
+          <li>Claude & Anthropic LLMs</li>
+          <li>n8n Enterprise Workflows & Custom Node Development</li>
+          <li>GitHub & Git Version Control</li>
+          <li>Gemini 1.5 Pro & Flash (Google DeepMind)</li>
+          <li>OpenAI GPT-4o & Custom GPTs</li>
+          <li>Perplexity API</li>
+          <li>Airtable Databases & Scripting</li>
+          <li>Cursor AI IDE</li>
+          <li>Make.com (Integromat) Automation & Workflows</li>
+          <li>Supabase Backend, Auth, & Database</li>
+          <li>Lovable Developer Environment</li>
+        </ul>
+      </div>
 
       <Canvas
         dpr={[1, 1.5]}
@@ -234,7 +252,7 @@ const TechStack = () => {
           <N8AO halfRes color="#0f002c" aoRadius={2} intensity={1.15} />
         </EffectComposer>
       </Canvas>
-    </div>
+    </section>
   );
 };
 

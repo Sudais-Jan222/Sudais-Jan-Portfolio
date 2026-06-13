@@ -9,7 +9,7 @@ const WhatIDo = () => {
   };
 
   return (
-    <div className="whatIDO">
+    <section className="whatIDO" aria-label="What I Do / Services">
       <div className="what-box">
         <h2 className="title">
           W<span className="hat-h2">HAT</span>
@@ -42,7 +42,7 @@ const WhatIDo = () => {
               />
             </svg>
           </div>
-          <div
+          <article
             className={`what-content ${activeIndex === 0 ? "what-content-active" : activeIndex === 1 ? "what-sibling" : ""}`}
             onClick={() => handleClick(0)}
           >
@@ -71,24 +71,24 @@ const WhatIDo = () => {
             <div className="what-corner"></div>
 
             <div className="what-content-in">
-              <h3>Custom AI Systems</h3>
+              <h3>Custom AI & Intelligent Agents</h3>
               <h4>Description</h4>
               <p>
-                I build AI that handles your boring, repetitive tasks so you don't have to.
-                The goal is simple: save your team hundreds of hours of manual work and cut
-                down your operating costs.
+                I build custom AI automation, intelligent agents, and n8n enterprise workflows that eliminate manual work. From Voiceflow agents to Make.com integrations, I construct autonomous revenue engines that run 24/7.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
-                <div className="what-tags">n8n</div>
-                <div className="what-tags">make.com</div>
-                <div className="what-tags">airtable</div>
-                <div className="what-tags">zapier</div>
+                <div className="what-tags">n8n Workflows</div>
+                <div className="what-tags">Voiceflow Agents</div>
+                <div className="what-tags">Make.com</div>
+                <div className="what-tags">LLM Integration</div>
+                <div className="what-tags">B2B Outreach</div>
+                <div className="what-tags">Airtable</div>
               </div>
               <div className="what-arrow"></div>
             </div>
-          </div>
-          <div
+          </article>
+          <article
             className={`what-content ${activeIndex === 1 ? "what-content-active" : activeIndex === 0 ? "what-sibling" : ""}`}
             onClick={() => handleClick(1)}
           >
@@ -107,28 +107,26 @@ const WhatIDo = () => {
             </div>
             <div className="what-corner"></div>
             <div className="what-content-in">
-              <h3>Vibe-Coded Apps</h3>
+              <h3>Vibe-Coded Web Apps</h3>
               <h4>Description</h4>
               <p>
-                I build custom web apps, clean interfaces, and automated workflows at lightning
-                speed. You get premium, fully functional software without the traditional
-                months-long wait times.
+                I develop custom web applications and intuitive user interfaces at lightning speed using vibe coding. You get premium, responsive, and fully automated software connected to reliable backends without the wait.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
-                <div className="what-tags">antigravity</div>
-                <div className="what-tags">lovable</div>
-                <div className="what-tags">github</div>
-                <div className="what-tags">netlify</div>
-                <div className="what-tags">supabase</div>
-                <div className="what-tags">firebase</div>
+                <div className="what-tags">Vibe Coding</div>
+                <div className="what-tags">React / Vite</div>
+                <div className="what-tags">Supabase</div>
+                <div className="what-tags">Firebase</div>
+                <div className="what-tags">GitHub</div>
+                <div className="what-tags">Netlify</div>
               </div>
               <div className="what-arrow"></div>
             </div>
-          </div>
+          </article>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

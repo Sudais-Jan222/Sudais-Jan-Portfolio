@@ -1,0 +1,103 @@
+# Sudais Jan | AI Architect & Automation Engineer
+
+I am an independent AI Architect and Automation Engineer. I specialize in building custom AI automation, intelligent agents, n8n enterprise workflows, Voiceflow conversational agents, and vibe-coded full-stack applications that act as autonomous revenue engines for B2B and Ecommerce brands.
+
+- **Website:** [sudaisjan.com](https://sudaisjan.com)
+- **Contact & Inquiry:** [sudaisjan.com/#contact](https://sudaisjan.com/#contact)
+- **Job Title:** AI Architect & Automation Engineer
+- **Core Skills:** Custom AI Automation, LLM Integration, n8n Enterprise Workflows, Voiceflow Agents, Make.com Automation, Autonomous B2B Outreach, Vibe Coding, Full-stack Web Development.
+
+---
+
+## Core Services & Expertise
+
+### 1. Custom AI Automation & Intelligent Agents
+Designing, engineering, and deploying autonomous AI systems and intelligent agents that replace manual, repetitive processes. I turn raw LLMs (OpenAI, Claude, Gemini) into reliable systems that handle support, operations, and sales.
+
+### 2. n8n Enterprise Workflows
+Orchestrating high-scale business processes using self-hosted and cloud n8n setups. I build custom n8n nodes, handle error recovery, and connect disparate databases, CRMs, and APIs.
+
+### 3. Voiceflow conversational agents
+Building human-like conversational agents for inbound/outbound phone calls, customer service, and appointment dispatch. Fully integrated with Twilio, Make.com, and custom POS/printer systems.
+
+### 4. Make.com & Zapier Automation
+Connecting business apps, spreadsheets, and databases to build seamless lead generation, notifications, and client onboarding workflows.
+
+### 5. Autonomous Revenue Engines & B2B Outreach
+Creating lead generation pipelines that scrape LinkedIn, analyze companies with AI models, write highly-personalized outbound pitches, and run automated email/LinkedIn campaigns in the background.
+
+### 6. Vibe-Coded Web Applications
+Developing modern full-stack web applications, custom developer tools, interactive web portals, and database integrations at lightning speed using React, Vite, Supabase, Firebase, and Tailwind CSS.
+
+---
+
+## Featured Work & Case Studies
+
+### 1. AI Voice OPS
+- **Category:** Voice Automation
+- **Stack:** Voiceflow, Zapier, POS/Printer API
+- **Problem:** Human receptionists answering calls, writing orders, and relaying them to the kitchen during rush hours creates bottlenecks and dropped calls.
+- **Solution:** An AI voice agent handles multiple simultaneous calls, takes complex orders, and prints tickets directly in the kitchen.
+
+### 2. Autonomous B2B Outreach Engine
+- **Category:** Outbound Automation
+- **Stack:** n8n, Google Sheets, Relevance AI, Gmail API
+- **Problem:** Personalizing cold outreach manually is slow and difficult to scale.
+- **Solution:** Scrapes leads, analyzes company data via Relevance AI, drafts hyper-customized emails, and sends them to Ideal Customer Profiles (ICPs) autonomously.
+
+### 3. AI Detailer Web Platform
+- **Category:** Full-Stack Web App
+- **Stack:** React, Gemini Vision, Antigravity
+- **Problem:** Missing calls during detailing sessions and difficulty explaining package choices based on vehicle condition.
+- **Solution:** A React app with a 24/7 AI chat assistant and an image estimator that recommends packages by analyzing uploaded vehicle photos.
+
+### 4. Ecom AI Shopping Assistant
+- **Category:** Conversational Commerce
+- **Stack:** LLMs, Shopify API, CRM Integration
+- **Problem:** High store bounce rates due to product selection confusion and slow customer support.
+- **Solution:** A 24/7 conversational chatbot that guides visitors, answers FAQs, and captures customer CRM leads.
+
+### 5. Ecom Abandoned Cart Closer
+- **Category:** Outbound AI Sales
+- **Stack:** Voiceflow, Twilio API, Shopify API
+- **Problem:** High rate of cart abandonment.
+- **Solution:** An outbound AI agent calls the lead, handles price objections, generates Shopify discount codes, and sends checkout links via SMS.
+
+### 6. High-Ticket Home Service Booker
+- **Category:** Intelligent Dispatch
+- **Stack:** Voiceflow, CRM API, Gemini
+- **Problem:** Unanswered emergency plumbing/HVAC calls result in lost high-value jobs.
+- **Solution:** A 24/7 AI dispatcher that registers addresses, diagnoses problems, and books appointments directly into the CRM.
+
+### 7. Ecom Creative Agent
+- **Category:** Generative AI
+- **Stack:** Make.com, Stable Diffusion, Gemini Vision
+- **Problem:** Designing high-quality ad creatives is slow, expensive, and difficult to scale.
+- **Solution:** Automatically analyzes competitor creatives and generates multiple studio-quality ad variants from a raw product image in seconds.
+
+### 8. Airtable Ad Agency Suite
+- **Category:** Content Engine
+- **Stack:** n8n, Airtable, Gemini API, Web Scraping
+- **Problem:** Ad agencies spend hours researching products and writing hooks across multiple platforms.
+- **Solution:** A unified Airtable dashboard where clicking one button triggers web scraping of the Facebook Ad Library and generates complete VSL scripts.
+
+### 9. Autonomous Content Marketing Engine
+- **Category:** Enterprise Architecture
+- **Stack:** n8n, Multi-Agent LLMs, HubSpot, Airtable
+- **Problem:** Multi-channel content production and tracking is slow and error-prone.
+- **Solution:** A 39-node n8n architecture running multiple agents to research trends, generate SEO-friendly content, publish across 6 platforms, and track outcomes in HubSpot CRM.
+
+---
+
+## Technical Stack & Tools
+
+- **AI & Large Language Models:** OpenAI (GPT-4o, GPT-4), Anthropic Claude (Claude 3.5 Sonnet), Google Gemini (1.5 Pro, Flash), Perplexity API, Relevance AI
+- **Workflow & Automation Tools:** n8n (Enterprise, Self-Hosted), Make.com (Integromat), Zapier, Twilio API, Email/POS APIs
+- **Web Technologies:** React, Vite, TypeScript, Javascript, Tailwind CSS, Vanilla HTML/CSS
+- **Backend & Database:** Supabase, Firebase, Airtable, HubSpot CRM, PostgreSQL, Google Sheets
+- **Development Philosophy:** Vibe Coding, Rapid Prototyping, Strict Semantic HTML, AI-Assisted Architecture
+
+---
+
+## Booking a Strategy Session
+If your business needs custom AI automation, intelligent agents, n8n workflows, or vibe-coded full-stack applications, get in touch at [sudaisjan.com/#contact](https://sudaisjan.com/#contact) to start building.
