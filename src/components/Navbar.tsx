@@ -58,11 +58,11 @@ const Navbar = () => {
           <span className="logo-bracket">{'}'}</span>
         </a>
         <a
-          href="mailto:sudais.jan@innoecome.com"
+          href="mailto:sudais@sudaisjan.com"
           className="navbar-connect"
           data-cursor="disable"
         >
-          sudais.jan@innoecome.com
+          sudais@sudaisjan.com
         </a>
         <ul>
           <li>

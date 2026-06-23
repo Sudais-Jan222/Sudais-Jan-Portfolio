@@ -125,8 +125,8 @@ const Resume = () => {
           </p>
           <div className="resume-contact-row">
             <span>
-              <a href="mailto:sudais.jan@innoecome.com">
-                sudais.jan@innoecome.com
+              <a href="mailto:sudais@sudaisjan.com">
+                sudais@sudaisjan.com
               </a>
             </span>
             <span className="resume-contact-divider">|</span>
